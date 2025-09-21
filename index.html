@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div
+      id="clock"
+      style="
+        color: #ffffff;
+        font-size: 15px;
+        font-weight: bold;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: nowrap;
+        font-family: monospace;
+      "
+    >
+      <span
+        id="clock-time"
+        style="flex-shrink: 0; width: 60px; text-align: center"
+      ></span>
+      <span id="clock-date" style="flex-shrink: 0"></span>
+    </div>
+  </body>
+
+  <script>
+    function clock() {
+      var d = new Date();
+      var date = String(d.getDate()).padStart(2, "0");
+      var month = String(d.getMonth() + 1).padStart(2, "0");
+      var year = d.getFullYear();
+      var hour = String(d.getHours()).padStart(2, "0");
+      var minute = String(d.getMinutes()).padStart(2, "0");
+      var second = String(d.getSeconds()).padStart(2, "0");
+
+      // Time and date as separate elements
+      var timeString = hour + ":" + minute + ":" + second;
+      var dateString = "Ngày " + date + "-" + month + "-" + year;
+
+      document.getElementById("clock-time").innerHTML = timeString;
+      document.getElementById("clock-date").innerHTML = dateString;
+
+      setTimeout(clock, 1000);
+    }
+    clock();
+  </script>
+</html>

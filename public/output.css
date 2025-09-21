@@ -1,0 +1,279 @@
+@font-face {
+  font-family: "TiroDevanagariMarathi";
+
+  src: url("https://fonts.googleapis.com/css2?family=Roboto&display=swap&subset=vietnamese") format("truetype");
+}
+
+@page {
+  size: A4;
+
+  /* standard A4 page */
+
+  margin: 0;
+
+  /* safe margin */
+}
+
+ul {
+  list-style: none;
+  padding-left: 1rem;
+  padding-right: 0;
+}
+ul.custom-list {
+  list-style-type: none; /* Remove default marker */
+}
+
+ul.custom-list li {
+  position: relative;
+  /* Space for custom marker */
+  line-height: 1.5;
+}
+
+ul.custom-list li::before {
+  content: "•"; /* Bullet character */
+  position: absolute;
+  left: -15px;
+  color: #fb923b; /* Match the color from your image */
+}
+.ml-auto {
+  margin-left: auto;
+}
+.max-w-40 {
+  max-width: 10rem;
+}
+
+.w-40-percent {
+  width: 45%;
+}
+
+.w-60-percent {
+  width: 55%;
+}
+
+.pb-150-percent {
+  padding-bottom: 150%;
+}
+
+/* chỉ áp dụng khi >=768px */
+
+.rounded-tl-30px {
+  border-top-left-radius: 30px;
+}
+.rounded-br-30px {
+  border-bottom-right-radius: 30px;
+}
+
+/* ==== Layout chính ==== */
+/* .font-semibold {
+  font-weight: 600;
+} */
+.bg-white {
+  background-color: #ffffff;
+}
+.flex {
+  display: flex;
+}
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+.top-0 {
+  top: 0;
+}
+
+/* ==== Left item ==== */
+.mt-14 {
+  margin-top: 3.5rem;
+}
+.space-y-3 > * + * {
+  margin-top: 0.75rem;
+}
+
+.max-w-40 {
+  max-width: 10rem;
+}
+
+/* .mb-5 {
+  margin-bottom: 1.25rem;
+} */
+
+.relative {
+  position: relative;
+}
+.w-full {
+  width: 100%;
+}
+
+.absolute {
+  position: absolute;
+}
+.inset-0 {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.h-full {
+  height: 100%;
+}
+.object-cover {
+  object-fit: cover;
+}
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+/* .pb-3 {
+  padding-bottom: 0.75rem;
+} */
+
+/* .space-y-1 > * + * {
+  margin-top: 0.25rem;
+} */
+
+.text-base {
+  font-size: 1.2rem;
+}
+.capitalize {
+  text-transform: capitalize;
+}
+.font-bold {
+  /* font-weight: 700; */
+}
+
+/* .px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+} */
+/* .py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+} */
+
+/* ==== Right item ==== */
+/* .pr-2 {
+  padding-right: 0.5rem;
+} */
+.flex-1 {
+  flex: 1 1 0%;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+.w-52 {
+  width: 13rem;
+}
+.scale-125 {
+  transform: scale(1.25);
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+/* .font-black {
+  font-weight: 900;
+} */
+
+.text-xl {
+  font-size: 1.25rem;
+}
+.text-center {
+  text-align: center;
+}
+.text-orange-400 {
+  color: #fb923c;
+}
+/* .pl-5 {
+  padding-left: 1.25rem;
+} */
+
+/* ==== Main Box Content ==== */
+.border-2 {
+  border: 2px solid black;
+}
+.border-orange-400 {
+  border-color: #fb923c;
+}
+/* .mt-6 {
+  margin-top: 1.5rem;
+} */
+
+.pl-4 {
+  padding-left: 1rem;
+}
+/* .pr-1 {
+  padding-right: 0.25rem;
+} */
+/* .space-y-7 > * + * {
+  margin-top: 1.75rem;
+} */
+/* .py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+} */
+
+.capitalize {
+  text-transform: capitalize;
+}
+/* .pt-7 {
+  padding-top: 1.75rem;
+} */
+
+.flex {
+  display: flex;
+}
+.gap-1 {
+  gap: 0.25rem;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.tracking-wide {
+  letter-spacing: 0.025em;
+}
+/* .text-justify {
+  text-align: justify;
+} */
+/* .pr-4 {
+  padding-right: 1rem;
+} */
+.title-box {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 900;
+  color: #fb923c;
+  text-transform: uppercase;
+  border-bottom: 2px solid #fb923c;
+  letter-spacing: 0.025em;
+}
+.custom-ribbon {
+  position: relative;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  width: 102%;
+  left: -8px;
+  font-weight: 700;
+  font-size: large;
+  text-align: center;
+  color: white;
+  background-image: linear-gradient(to bottom, #fb923c, #fb923c);
+  text-transform: uppercase;
+}
+
+.custom-ribbon:after {
+  content: "";
+  border: 4px solid;
+  border-color: transparent transparent #fb923c #fb923c;
+  position: absolute;
+  right: 0;
+  top: -7px;
+}

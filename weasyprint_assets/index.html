@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      ul {
+        list-style: none;
+      }
+      .ml-auto {
+        margin-left: auto;
+      }
+      .max-w-40 {
+        max-width: 10rem;
+      }
+
+      .w-40-percent {
+        width: 40%;
+      }
+
+      .w-60-percent {
+        width: 60%;
+      }
+
+      .pb-150-percent {
+        padding-bottom: 150%;
+      }
+
+      /* chỉ áp dụng khi >=768px */
+
+      .rounded-tl-30px {
+        border-top-left-radius: 30px;
+      }
+      .rounded-br-30px {
+        border-bottom-right-radius: 30px;
+      }
+
+      .min-h-1000px {
+        min-height: 1000px;
+      }
+      /* ==== Layout chính ==== */
+      .font-semibold {
+        font-weight: 600;
+      }
+      .bg-white {
+        background-color: #ffffff;
+      }
+      .flex {
+        display: flex;
+      }
+      .mx-auto {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .top-0 {
+        top: 0;
+      }
+
+      /* ==== Left item ==== */
+      .mt-14 {
+        margin-top: 3.5rem;
+      }
+      .space-y-3 > * + * {
+        margin-top: 0.75rem;
+      }
+
+      .break-words {
+        word-break: break-word;
+      }
+
+      .max-w-40 {
+        max-width: 10rem;
+      }
+
+      .mb-5 {
+        margin-bottom: 1.25rem;
+      }
+
+      .relative {
+        position: relative;
+      }
+      .w-full {
+        width: 100%;
+      }
+
+      .absolute {
+        position: absolute;
+      }
+      .inset-0 {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+
+      .h-full {
+        height: 100%;
+      }
+      .object-cover {
+        object-fit: cover;
+      }
+      .rounded-lg {
+        border-radius: 0.5rem;
+      }
+      .pb-3 {
+        padding-bottom: 0.75rem;
+      }
+
+      .space-y-1 > * + * {
+        margin-top: 0.25rem;
+      }
+
+      .text-sm {
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+      }
+      .capitalize {
+        text-transform: capitalize;
+      }
+      .font-bold {
+        font-weight: 700;
+      }
+
+      .px-4 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      .py-1 {
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+      }
+
+      /* ==== Right item ==== */
+      .pr-2 {
+        padding-right: 0.5rem;
+      }
+      .flex-1 {
+        flex: 1 1 0%;
+      }
+      .overflow-hidden {
+        overflow: hidden;
+      }
+
+      .mx-auto {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .w-52 {
+        width: 13rem;
+      }
+      .scale-125 {
+        transform: scale(1.25);
+      }
+
+      .uppercase {
+        text-transform: uppercase;
+      }
+      .font-black {
+        font-weight: 900;
+      }
+
+      .md\:text-xl {
+        font-size: 1.25rem;
+      } /* chỉ áp dụng khi >=768px */
+      .text-center {
+        text-align: center;
+      }
+      .text-orange-400 {
+        color: #fb923c;
+      }
+      .pl-5 {
+        padding-left: 1.25rem;
+      }
+
+      /* ==== Main Box Content ==== */
+      .border-2 {
+        border: 2px solid black;
+      }
+      .border-orange-400 {
+        border-color: #fb923c;
+      }
+      .mt-6 {
+        margin-top: 1.5rem;
+      }
+
+      .pl-4 {
+        padding-left: 1rem;
+      }
+      .py-8 {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      }
+      .pr-1 {
+        padding-right: 0.25rem;
+      }
+      .space-y-7 > * + * {
+        margin-top: 1.75rem;
+      }
+
+      .py-4 {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+      }
+
+      .capitalize {
+        text-transform: capitalize;
+      }
+      .pt-7 {
+        padding-top: 1.75rem;
+      }
+
+      .flex {
+        display: flex;
+      }
+      .gap-1 {
+        gap: 0.25rem;
+      }
+      .flex-wrap {
+        flex-wrap: wrap;
+      }
+
+      .tracking-wide {
+        letter-spacing: 0.025em;
+      }
+      .text-justify {
+        text-align: justify;
+      }
+      .pr-4 {
+        padding-right: 1rem;
+      }
+      .title-box {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+        font-weight: 900;
+        color: #fb923c;
+        text-transform: uppercase;
+        border-bottom: 2px solid #fb923c;
+        letter-spacing: 0.025em;
+      }
+      .custom-ribbon {
+        position: relative;
+        padding-block: 4px;
+        width: 102%;
+        left: -8px;
+        font-weight: 700;
+        font-size: large;
+        text-align: center;
+        color: white;
+        background-image: linear-gradient(to bottom, #fb923c, #fb923c);
+        text-transform: uppercase;
+      }
+
+      .custom-ribbon:after {
+        content: "";
+        border: 4px solid;
+        border-color: transparent transparent #fb923c #fb923c;
+        position: absolute;
+        right: 0;
+        top: -7px;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="capture-cv"
+      class="font-semibold border-l-4 border-cyan-500 bg-white flex sticky top-0"
+      data-v-inspector="components/Cv/RightCvExport.vue:24:3"
+      data-v-3d472b1f=""
+      data-v-ec8bce11=""
+    >
+      <div
+        class="left-item mt-14 space-y-3 w-40-percent break-words"
+        data-v-inspector="components/Cv/RightCvExport.vue:25:5"
+        data-v-ec8bce11=""
+      >
+        <div
+          class="max-w-40 w-60-percent mb-5 mx-auto"
+          data-v-inspector="components/Cv/RightCvExport.vue:26:7"
+          data-v-ec8bce11=""
+        >
+          <div
+            class="relative w-full pb-150-percent"
+            data-v-inspector="components/Cv/RightCvExport.vue:27:9"
+            data-v-ec8bce11=""
+          >
+            <div
+              class="absolute inset-0"
+              data-v-inspector="components/Cv/RightCvExport.vue:28:11"
+              data-v-ec8bce11=""
+            >
+              <img
+                src="https://media8k.b-cdn.net/hr-bio/avatars/avatar_wz6yNtJYRfCfvmk8XnPx4g.jpg"
+                alt="bio.tuyendung8k.com/placeholder/create-cv"
+                class="w-full h-full object-cover rounded-lg"
+                data-v-inspector="components/Cv/RightCvExport.vue:29:13"
+                data-v-ec8bce11=""
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          data-v-inspector="components/Cv/TitleRibbon.vue:9:3"
+          data-v-ec8bce11=""
+          data-v-7fc604f0=""
+        >
+          <h1
+            class="custom-ribbon"
+            data-v-inspector="components/Cv/TitleRibbon.vue:10:5"
+            data-v-7fc604f0=""
+          >
+            Thông tin ứng viên
+          </h1>
+        </div>
+        <div
+          class="px-8 pb-3"
+          data-v-inspector="components/Cv/RightCvExport.vue:34:7"
+          data-v-ec8bce11=""
+        >
+          <ul
+            class="custom-list space-y-1"
+            data-v-inspector="components/Cv/RightCvExport.vue:35:9"
+            data-v-ec8bce11=""
+          >
+            <!--[-->
+            <li
+              data-v-inspector="components/Cv/RightCvExport.vue:36:11"
+              data-v-ec8bce11=""
+            >
+              <span
+                class="text-sm capitalize"
+                data-v-inspector="components/Cv/RightCvExport.vue:37:13"
+                data-v-ec8bce11=""
+                >họ tên</span
+              >:
+              <span
+                class="font-bold"
+                data-v-inspector="components/Cv/RightCvExport.vue:38:16"
+                data-v-ec8bce11=""
+                >dsadasdsa</span
+              >
+            </li>
+            <li
+              data-v-inspector="components/Cv/RightCvExport.vue:36:11"
+              data-v-ec8bce11=""
+            >
+              <span
+                class="text-sm capitalize"
+                data-v-inspector="components/Cv/RightCvExport.vue:37:13"
+                data-v-ec8bce11=""
+                >Vị trí ứng tuyển</span
+              >:
+              <span
+                class="font-bold"
+                data-v-inspector="components/Cv/RightCvExport.vue:38:16"
+                data-v-ec8bce11=""
+                >Sale thường</span
+              >
+            </li>
+            <li
+              data-v-inspector="components/Cv/RightCvExport.vue:36:11"
+              data-v-ec8bce11=""
+            >
+              <span
+                class="text-sm capitalize"
+                data-v-inspector="components/Cv/RightCvExport.vue:37:13"
+                data-v-ec8bce11=""
+                >Ngày sinh</span
+              >:
+              <span
+                class="font-bold"
+                data-v-inspector="components/Cv/RightCvExport.vue:38:16"
+                data-v-ec8bce11=""
+                >11-09-2025</span
+              >
+            </li>
+            <li
+              data-v-inspector="components/Cv/RightCvExport.vue:36:11"
+              data-v-ec8bce11=""
+            >
+              <span
+                class="text-sm capitalize"
+                data-v-inspector="components/Cv/RightCvExport.vue:37:13"
+                data-v-ec8bce11=""
+                >Giới tính</span
+              >:
+              <span
+                class="font-bold"
+                data-v-inspector="components/Cv/RightCvExport.vue:38:16"
+                data-v-ec8bce11=""
+                >Nam</span
+              >
+            </li>
+            <li
+              data-v-inspector="components/Cv/RightCvExport.vue:36:11"
+              data-v-ec8bce11=""
+            >
+              <span
+                class="text-sm capitalize"
+                data-v-inspector="components/Cv/RightCvExport.vue:37:13"
+                data-v-ec8bce11=""
+                >Số CCCD</span
+              >:
+              <span
+                class="font-bold"
+                data-v-inspector="components/Cv/RightCvExport.vue:38:16"
+                data-v-ec8bce11=""
+                >dsadasdas</span
+              >
+            </li>
+            <li
+              data-v-inspector="components/Cv/RightCvExport.vue:36:11"
+              data-v-ec8bce11=""
+            >
+              <span
+                class="text-sm capitalize"
+                data-v-inspector="components/Cv/RightCvExport.vue:37:13"
+                data-v-ec8bce11=""
+                >Nơi cấp</span
+              >:
+              <span
+                class="font-bold"
+                data-v-inspector="components/Cv/RightCvExport.vue:38:16"
+                data-v-ec8bce11=""
+                >CỤC CẢNH SÁT QUẢN LÝ HÀNH CHÍNH TRẬT TỰ XÃ HỘI</span
+              >
+            </li>
+            <li
+              data-v-inspector="components/Cv/RightCvExport.vue:36:11"
+              data-v-ec8bce11=""
+            >
+              <span
+                class="text-sm capitalize"
+                data-v-inspector="components/Cv/RightCvExport.vue:37:13"
+                data-v-ec8bce11=""
+                >Tình trạng hôn nhân</span
+              >:
+              <span
+                class="font-bold"
+                data-v-inspector="components/Cv/RightCvExport.vue:38:16"
+                data-v-ec8bce11=""
+                >Đã kết hôn</span
+              >
+            </li>
+            <li
+              data-v-inspector="components/Cv/RightCvExport.vue:36:11"
+              data-v-ec8bce11=""
+            >
+              <span
+                class="text-sm capitalize"
+                data-v-inspector="components/Cv/RightCvExport.vue:37:13"
+                data-v-ec8bce11=""
+                >Quốc tịch</span
+              >:
+              <span
+                class="font-bold"
+                data-v-inspector="components/Cv/RightCvExport.vue:38:16"
+                data-v-ec8bce11=""
+                >Trung Quốc</span
+              >
+            </li>
+            <li
+              data-v-inspector="components/Cv/RightCvExport.vue:36:11"
+              data-v-ec8bce11=""
+            >
+              <span
+                class="text-sm capitalize"
+                data-v-inspector="components/Cv/RightCvExport.vue:37:13"
+                data-v-ec8bce11=""
+                >Dân tộc</span
+              >:
+              <span
+                class="font-bold"
+                data-v-inspector="components/Cv/RightCvExport.vue:38:16"
+                data-v-ec8bce11=""
+                >Thái</span
+              >
+            </li>
+            <li
+              data-v-inspector="components/Cv/RightCvExport.vue:36:11"
+              data-v-ec8bce11=""
+            >
+              <span
+                class="text-sm capitalize"
+                data-v-inspector="components/Cv/RightCvExport.vue:37:13"
+                data-v-ec8bce11=""
+                >Số điện thoại</span
+              >:
+              <span
+                class="font-bold"
+                data-v-inspector="components/Cv/RightCvExport.vue:38:16"
+                data-v-ec8bce11=""
+                >0983000888</span
+              >
+            </li>
+            <li
+              data-v-inspector="components/Cv/RightCvExport.vue:36:11"
+              data-v-ec8bce11=""
+            >
+              <span
+                class="text-sm capitalize"
+                data-v-inspector="components/Cv/RightCvExport.vue:37:13"
+                data-v-ec8bce11=""
+                >email</span
+              >:
+              <span
+                class="font-bold"
+                data-v-inspector="components/Cv/RightCvExport.vue:38:16"
+                data-v-ec8bce11=""
+                >admin@example.com</span
+              >
+            </li>
+            <li
+              data-v-inspector="components/Cv/RightCvExport.vue:36:11"
+              data-v-ec8bce11=""
+            >
+              <span
+                class="text-sm capitalize"
+                data-v-inspector="components/Cv/RightCvExport.vue:37:13"
+                data-v-ec8bce11=""
+                >Địa chỉ</span
+              >:
+              <span
+                class="font-bold"
+                data-v-inspector="components/Cv/RightCvExport.vue:38:16"
+                data-v-ec8bce11=""
+                >dsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsa,
+                Xã Sùng Phài, Huyện Tam Đường, Tỉnh Lai Châu</span
+              >
+            </li>
+            <!--]-->
+          </ul>
+        </div>
+        <div
+          data-v-inspector="components/Cv/TitleRibbon.vue:9:3"
+          data-v-ec8bce11=""
+          data-v-7fc604f0=""
+        >
+          <h1
+            class="custom-ribbon"
+            data-v-inspector="components/Cv/TitleRibbon.vue:10:5"
+            data-v-7fc604f0=""
+          >
+            Sở thích
+          </h1>
+        </div>
+        <ul
+          class="px-4 pb-3"
+          data-v-inspector="components/Cv/RightCvExport.vue:43:7"
+          data-v-ec8bce11=""
+        >
+          <li data-v-ec8bce11="" class="py-1">
+            dsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsa
+          </li>
+        </ul>
+        <div
+          data-v-inspector="components/Cv/TitleRibbon.vue:9:3"
+          data-v-ec8bce11=""
+          data-v-7fc604f0=""
+        >
+          <h1
+            class="custom-ribbon"
+            data-v-inspector="components/Cv/TitleRibbon.vue:10:5"
+            data-v-7fc604f0=""
+          >
+            Tin học
+          </h1>
+        </div>
+        <ul
+          class="px-4 pb-3"
+          data-v-inspector="components/Cv/RightCvExport.vue:50:7"
+          data-v-ec8bce11=""
+        >
+          <li
+            data-v-inspector="components/Cv/RightCvExport.vue:51:9"
+            data-v-ec8bce11=""
+          >
+            Work:
+            <span
+              class="font-bold"
+              data-v-inspector="components/Cv/RightCvExport.vue:52:17"
+              data-v-ec8bce11=""
+              >Đánh chữ cơ bản</span
+            >
+          </li>
+          <li
+            data-v-inspector="components/Cv/RightCvExport.vue:54:9"
+            data-v-ec8bce11=""
+          >
+            Excel:
+            <span
+              class="font-bold"
+              data-v-inspector="components/Cv/RightCvExport.vue:55:18"
+              data-v-ec8bce11=""
+              >Nhập liệu cơ bản</span
+            >
+          </li>
+        </ul>
+      </div>
+      <div
+        class="right-item pr-2 h-full w-60-percent overflow-hidden break-words ml-auto"
+        data-v-inspector="components/Cv/RightCvExport.vue:59:5"
+        data-v-ec8bce11=""
+      >
+        <!-- Logo -->
+        <div
+          data-v-inspector="components/Cv/RightCvExport.vue:61:7"
+          data-v-ec8bce11=""
+        >
+          <div
+            class="mx-auto w-52"
+            data-v-inspector="components/Cv/RightCvExport.vue:62:9"
+            data-v-ec8bce11=""
+          >
+            <img
+              src="https://media8k.b-cdn.net/hr-bio/logo.png"
+              alt="bio.tuyendung8k.com"
+              class="w-full h-full object-cover scale-125"
+              data-v-inspector="components/Cv/RightCvExport.vue:63:11"
+              data-v-ec8bce11=""
+            />
+          </div>
+          <h2
+            class="uppercase font-black text-[10px] md:text-xl text-center text-orange-400 break-words pl-5"
+            data-v-inspector="components/Cv/RightCvExport.vue:65:9"
+            data-v-ec8bce11=""
+          >
+            nhân sự phụ trách:
+            <span
+              data-v-inspector="components/Cv/RightCvExport.vue:66:30"
+              data-v-ec8bce11=""
+              >dsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsads</span
+            >
+          </h2>
+        </div>
+        <!-- Logo --><!-- Main Box Content -->
+        <div
+          class="border-2 border-orange-400 mt-6 rounded-tl-30px rounded-br-30px pl-4 py-8 pr-1 space-y-7 min-h-1000px"
+          data-v-inspector="components/Cv/RightCvExport.vue:71:7"
+          data-v-ec8bce11=""
+        >
+          <div
+            data-v-inspector="components/Cv/RightCvExport.vue:72:9"
+            data-v-ec8bce11=""
+          >
+            <h2
+              class="title-box"
+              data-v-inspector="components/Cv/TitleBoxIcon.vue:10:3"
+              data-v-ec8bce11=""
+              data-v-85e7cd97=""
+            >
+              <img
+                src="https://media8k.b-cdn.net/hr-bio/ads_click.svg"
+                alt="bio.tuyendung8k.com/icons/icon-title/https://media8k.b-cdn.net/hr-bio/ads_click.svg"
+                width="30"
+                height="30"
+                data-v-inspector="components/Cv/TitleBoxIcon.vue:11:5"
+                data-v-85e7cd97=""
+              />
+              mục tiêu nghề nghiệp
+            </h2>
+            <div
+              class="px-7 py-4"
+              data-v-inspector="components/Cv/RightCvExport.vue:74:11"
+              data-v-ec8bce11=""
+            >
+              <ul
+                class="custom-list space-y-1"
+                data-v-inspector="components/Cv/RightCvExport.vue:75:13"
+                data-v-ec8bce11=""
+              >
+                <!--[-->
+                <li
+                  class=""
+                  data-v-inspector="components/Cv/RightCvExport.vue:76:15"
+                  data-v-ec8bce11=""
+                >
+                  dsadasdsadsadas
+                </li>
+                <!--]-->
+              </ul>
+            </div>
+          </div>
+          <!-- Education -->
+          <div
+            data-v-inspector="components/Cv/RightCvExport.vue:83:9"
+            data-v-ec8bce11=""
+          >
+            <h2
+              class="title-box"
+              data-v-inspector="components/Cv/TitleBoxIcon.vue:10:3"
+              data-v-ec8bce11=""
+              data-v-85e7cd97=""
+            >
+              <img
+                src="https://media8k.b-cdn.net/hr-bio/school.svg"
+                alt="bio.tuyendung8k.com/icons/icon-title/https://media8k.b-cdn.net/hr-bio/school.svg"
+                width="30"
+                height="30"
+                data-v-inspector="components/Cv/TitleBoxIcon.vue:11:5"
+                data-v-85e7cd97=""
+              />
+              học vấn
+            </h2>
+            <div
+              class="px-7 py-4"
+              data-v-inspector="components/Cv/RightCvExport.vue:85:11"
+              data-v-ec8bce11=""
+            >
+              <ul
+                class="custom-list capitalize space-y-1"
+                data-v-inspector="components/Cv/RightCvExport.vue:86:13"
+                data-v-ec8bce11=""
+              >
+                <li
+                  data-v-inspector="components/Cv/RightCvExport.vue:87:15"
+                  data-v-ec8bce11=""
+                >
+                  Trình độ: sdadsadassdadsadassdadsadassdadsadas
+                </li>
+                <li
+                  data-v-inspector="components/Cv/RightCvExport.vue:88:15"
+                  data-v-ec8bce11=""
+                >
+                  Từ năm 2002 đến năm 2004
+                </li>
+                <li
+                  data-v-inspector="components/Cv/RightCvExport.vue:92:15"
+                  data-v-ec8bce11=""
+                >
+                  Trường: Nguyễn Hữu Cảnh
+                </li>
+                <li
+                  data-v-inspector="components/Cv/RightCvExport.vue:93:15"
+                  data-v-ec8bce11=""
+                >
+                  Chuyên ngành: dsadasdsa
+                </li>
+                <li
+                  data-v-inspector="components/Cv/RightCvExport.vue:94:15"
+                  data-v-ec8bce11=""
+                >
+                  Tốt nghiệp loại: Khá
+                </li>
+                <li
+                  class="flex gap-1 flex-wrap"
+                  data-v-inspector="components/Cv/RightCvExport.vue:95:15"
+                  data-v-ec8bce11=""
+                >
+                  <div
+                    data-v-inspector="components/Cv/RightCvExport.vue:96:17"
+                    data-v-ec8bce11=""
+                  >
+                    Ngoại ngữ:
+                  </div>
+                  <!--[--><span data-v-ec8bce11=""> Tiếng anh, </span
+                  ><span data-v-ec8bce11=""> Tiếng trung, </span
+                  ><span data-v-ec8bce11=""> Tiếng thái, </span
+                  ><span data-v-ec8bce11=""> Tiếng khmer, </span
+                  ><span data-v-ec8bce11=""> Tiếng nhật, </span
+                  ><span data-v-ec8bce11=""> Tiếng hàn, </span
+                  ><span data-v-ec8bce11=""> Tiếng đức, </span
+                  ><span data-v-ec8bce11=""> Tiếng pháp, </span
+                  ><span data-v-ec8bce11=""> Tiếng tây ban nha, </span
+                  ><!--]-->
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- Education --><!-- Experience -->
+          <div
+            data-v-inspector="components/Cv/RightCvExport.vue:104:9"
+            data-v-ec8bce11=""
+          >
+            <h2
+              class="title-box"
+              data-v-inspector="components/Cv/TitleBoxIcon.vue:10:3"
+              data-v-ec8bce11=""
+              data-v-85e7cd97=""
+            >
+              <img
+                src="https://media8k.b-cdn.net/hr-bio/work_history.svg"
+                alt="bio.tuyendung8k.com/icons/icon-title/https://media8k.b-cdn.net/hr-bio/work_history.svg"
+                width="30"
+                height="30"
+                data-v-inspector="components/Cv/TitleBoxIcon.vue:11:5"
+                data-v-85e7cd97=""
+              />
+              kinh nghiệm làm việc
+            </h2>
+            <div
+              class="py-4"
+              data-v-inspector="components/Cv/RightCvExport.vue:106:11"
+              data-v-ec8bce11=""
+            >
+              <!--[-->
+              <ul
+                class="pt-7 custom-list space-y-1 px-7 break-words"
+                data-v-inspector="components/Cv/RightCvExport.vue:107:13"
+                data-v-ec8bce11=""
+              >
+                <li
+                  data-v-inspector="components/Cv/RightCvExport.vue:114:15"
+                  data-v-ec8bce11=""
+                >
+                  Từ: tháng 2 năm 2001 đến tháng 4 năm 2002
+                </li>
+                <li
+                  data-v-inspector="components/Cv/RightCvExport.vue:119:15"
+                  data-v-ec8bce11=""
+                >
+                  Tên công ty: sdadasdasdasdas
+                </li>
+                <li
+                  data-v-inspector="components/Cv/RightCvExport.vue:120:15"
+                  data-v-ec8bce11=""
+                >
+                  Vị trí: dsadsadasdas
+                </li>
+                <li
+                  class="break-words"
+                  data-v-inspector="components/Cv/RightCvExport.vue:121:15"
+                  data-v-ec8bce11=""
+                >
+                  Mô tả công việc:
+                  dsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsadsa
+                </li>
+                <br
+                  data-v-inspector="components/Cv/RightCvExport.vue:122:15"
+                  data-v-ec8bce11=""
+                />
+              </ul>
+              <!--]-->
+            </div>
+          </div>
+          <!-- Experience --><!-- End -->
+          <div
+            data-v-inspector="components/Cv/RightCvExport.vue:133:9"
+            data-v-ec8bce11=""
+          >
+            <h2
+              class="title-box"
+              data-v-inspector="components/Cv/TitleBoxIcon.vue:10:3"
+              data-v-ec8bce11=""
+              data-v-85e7cd97=""
+            >
+              <img
+                src="https://media8k.b-cdn.net/hr-bio/person_search.svg"
+                alt="bio.tuyendung8k.com/icons/icon-title/https://media8k.b-cdn.net/hr-bio/person_search.svg"
+                width="30"
+                height="30"
+                data-v-inspector="components/Cv/TitleBoxIcon.vue:11:5"
+                data-v-85e7cd97=""
+              />
+              tự đánh giá bản thân
+            </h2>
+            <p
+              class="mt-3 tracking-wide text-justify pr-4"
+              data-v-inspector="components/Cv/RightCvExport.vue:135:11"
+              data-v-ec8bce11=""
+            >
+              Tất cả thông tin trên đều là sự thật. Nếu thông tin bị sai lệch
+              hoặc giả mạo, tôi xin chịu hoàn toàn trách nhiệm trước pháp luật.
+            </p>
+          </div>
+        </div>
+        <!-- Main Box Content -->
+      </div>
+    </div>
+  </body>
+</html>
