@@ -88,3 +88,27 @@ def handle_exceptions(func: Callable) -> Callable:
                 raise HTTPException(status_code=500, detail="Internal server error")
 
     return wrapper
+
+
+def supa_handle_exceptions(func: Callable) -> Callable:
+    """
+    Decorator to automatically handle exceptions and raise HTTPException
+    with appropriate status codes and messages.
+    """
+
+    @wraps(func)
+    async def wrapper(*args, **kwargs):
+        try:
+            return await func(*args, **kwargs)
+        except HTTPException:
+            raise
+        except Exception as e:
+            # Re-raise HTTPException as is
+            if hasattr(e, "message"):
+                raise HTTPException(status_code=400, detail=e.message or e)
+            else:
+                # For unexpected errors, you might want to log them
+                # and return a generic error response
+                raise HTTPException(status_code=500, detail="Internal server error")
+
+    return wrapper

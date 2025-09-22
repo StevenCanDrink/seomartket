@@ -4,10 +4,11 @@ from pymongo import AsyncMongoClient
 from beanie import init_beanie
 import model.index as model
 from model.user import User
+from auth.supabase import close_client, get_client, get_client_anon
 import os
 
 
-async def initiate_database():
+async def initiate_database_mongo():
     client = AsyncMongoClient(os.getenv("MONGO_URL"))
     await init_beanie(database=client.user_manage, document_models=model.__all__)
 
@@ -16,10 +17,12 @@ async def initiate_database():
 async def lifespan(app: FastAPI):
 
     # Startup code
-    await initiate_database()
-
-    print("mongo-bunnycdn-jwt installed")
+    get_client()
+    get_client_anon()
+    print("supabase installed")
+    # print("mongo-bunnycdn-jwt installed")
     # async for user in User.find_all():
     #     print(user)
     yield
+    close_client()
     # Shutdown / cleanup code
