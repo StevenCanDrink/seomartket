@@ -1,7 +1,7 @@
 # from functools import wraps
 # from typing import Dict, Any, Callable, TypeVar, Optional, List
 from fastapi import HTTPException, Request, Header
-from auth.supabase import get_supabase
+from auth.supabase import get_supabase_auth
 import jwt, json
 import base64
 

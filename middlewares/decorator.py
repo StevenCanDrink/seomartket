@@ -103,6 +103,7 @@ def supa_handle_exceptions(func: Callable) -> Callable:
         except HTTPException:
             raise
         except Exception as e:
+            print(e)
             # Re-raise HTTPException as is
             if hasattr(e, "message"):
                 raise HTTPException(status_code=400, detail=e.message or e)
